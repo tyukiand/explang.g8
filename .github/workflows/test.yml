@@ -1,0 +1,32 @@
+name: Run SBT tests (on PR or merge into main)
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'  # You can change this depending on your project's JDK version
+        distribution: 'adoptopenjdk'
+
+    - name: Set up SBT
+      uses: olafurpg/setup-sbt@v1
+      with:
+        sbt-version: '1.5.5'  # You can adjust to your SBT version
+
+    - name: Run sbt test
+      run: sbt test
+
