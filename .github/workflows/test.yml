@@ -21,11 +21,8 @@ jobs:
       with:
         java-version: '11'  # You can change this depending on your project's JDK version
         distribution: 'adoptopenjdk'
-
     - name: Set up SBT
-      uses: olafurpg/setup-sbt@v1
-      with:
-        sbt-version: '1.5.5'  # You can adjust to your SBT version
+      uses: sbt/setup-sbt@v1
 
     - name: Run sbt test
       run: sbt test
