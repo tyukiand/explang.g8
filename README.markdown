@@ -1,12 +1,18 @@
-[Giter8][g8] template for small programming language experiments
+# Nothing To See Here
 
-Automatically sets up some basics, such as
+Just some boilerplate generator, you most likely don't need it.
+
+-----
+
+[Giter8][g8] template for small experiments.
+
+Includes some batteries:
 
   * `cats`
   * `cats-mtl`
   * `cats-effect`
   * `scala-parser-combinators`
-  * `antlr4` already set-up (remove one if you don't need both)
+  * `antlr4`
   * `scalacheck`
 
 Template license
