@@ -24,6 +24,11 @@ jobs:
     - name: Set up SBT
       uses: sbt/setup-sbt@v1
 
-    - name: Run sbt test
-      run: sbt test
+    - name: Run sbt g8Test (in Giter top-level project)
+      run: sbt g8Test
+
+    - name: Run sbt test (in the generated project)
+      run: |
+        cd ./target/sbt-test/explang.g8/scripted/some-language/
+        sbt test
 
