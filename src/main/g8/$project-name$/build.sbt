@@ -1,7 +1,7 @@
 ThisBuild / scalaVersion := "$scala-version$"
 
-lazy val root = (project in file(".")).
-  settings(
+lazy val root = (project in file("."))
+  .settings(
     name := "$project-name$",
     /*
     $dependency-links$
@@ -11,5 +11,6 @@ lazy val root = (project in file(".")).
     libraryDependencies += "org.typelevel" %% "cats-effect" % "$cats-effect-version$",
     libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "$scala-parser-combinators-version$",
     libraryDependencies += "org.scalacheck" %% "scalacheck" % "$scalacheck-version$" % Test,
-    libraryDependencies += "org.scalameta" %% "munit" % "$munit-version$" % Test
+    libraryDependencies += "org.scalameta" %% "munit" % "$munit-version$" % Test,
+    libraryDependencies += "com.lihaoyi" %% "fastparse" % "$fastparse-version$"
   )
