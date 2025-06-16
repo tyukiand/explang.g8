@@ -1,10 +1,6 @@
-# Nothing To See Here
+# Language Experiments Boilerplate Generator
 
-Just some boilerplate generator, you most likely don't need it.
-
------
-
-[Giter8][g8] template for small experiments.
+[Giter8][g8] template for small programming-language related experiments.
 
 Includes some batteries:
 
@@ -12,8 +8,25 @@ Includes some batteries:
   * `cats-mtl`
   * `cats-effect`
   * `scala-parser-combinators`
-  * `antlr4`
+  * `fastparse` (pick either)
   * `scalacheck`
+  * `munit`
+
+Usage
+-----
+
+Note that this template does not require a manually created
+project directory, it will create the project-root directory
+on its own:
+
+```scala
+sbt new tyukiand/explang.g8
+# Change the project name / package name
+# click "Enter" when presented with a list of links to the dependency versions.
+# click "Enter" couple of times or update the versions.
+cd name-of-the-project   # this is created automatically
+sbt test                 # this should build and run the tests
+```
 
 Template license
 ----------------
