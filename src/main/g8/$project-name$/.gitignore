@@ -1,0 +1,12 @@
+target/
+.vscode
+.metals
+.bloop
+
+*.swp
+*.class
+
+ignored-*
+ignore-*
+.ignored-*
+.ignore-*
