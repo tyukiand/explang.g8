@@ -1,0 +1,29 @@
+name: Run SBT tests (on PR or merge into main)
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      JAVA_OPTS: -Xms2048M -Xmx2048M -Xss6M -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF-8
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 17
+        cache: sbt
+    - name: Set up SBT
+      uses: sbt/setup-sbt@v1
+
+    - name: SBT Test
+      run: sbt test
+
